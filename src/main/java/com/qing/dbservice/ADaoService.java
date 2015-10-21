@@ -1,5 +1,7 @@
 package com.qing.dbservice;
 
+import android.content.Context;
+
 import java.util.List;
 
 import de.greenrobot.dao.AbstractDao;
@@ -11,32 +13,41 @@ import de.greenrobot.dao.AbstractDaoSession;
  * 此类实现了大部分的方法
  */
 public abstract class ADaoService<T0,T1> implements IDaoService<T0, T1>{
-	
+
 	/**
-	private static className daoService;
-	private static DaoSession daoSession;
-	private static T0 dao;
-	private className(){ }
-	
-	public static className getDaoService(Context context){
-		if(daoService==null){
-			GreenDao.Init(context);
-			daoSession = GreenDao.getDaoSession();
-			daoService = new className();
-			dao = daoSession.get T0();
-		}
-		return daoService;
-	}
-	*/
+	 private static T0_Service daoService;
+	 private DaoSession daoSession;
+	 private T0_Service(Context context) {
+		 super(context);
+		 daoSession = GreenDao.Init(context).getDaoSession();
+		 dao = daoSession.get_T0();
+		 daoService = this;
+	 }
 
-	public abstract T0 getDao();
+	 public static T0_Service getDaoService(Context context){
+		 if(daoService==null){
+		 	daoService = new T0_Service(context);
+		 }
+		 return daoService;
+	 }
+	 */
 
-	public abstract AbstractDaoSession getDaoSession();
-	
+	/** */
+	protected T0 dao;
 	/**
 	 * 获取Dao对象
 	 */
 	private AbstractDao<T1, Object> mDao;
+
+	protected ADaoService(Context context){
+
+	}
+
+	public abstract AbstractDaoSession getDaoSession();
+
+	public T0 getDao(){
+		return dao;
+	}
 	
 	@SuppressWarnings("unchecked")
 	private AbstractDao<T1, Object> getAbstractDao(){
