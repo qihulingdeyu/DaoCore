@@ -8,7 +8,7 @@ import de.greenrobot.dao.AbstractDaoSession;
 /**
  * Created by zwq on 2015-7-30 下午2:14 <br/>
  * @param <T0,T1>
- * 与ADaoService类相比，此类实现了大部分的方法
+ * 此类实现了大部分的方法
  */
 public abstract class ADaoService<T0,T1> implements IDaoService<T0, T1>{
 	
