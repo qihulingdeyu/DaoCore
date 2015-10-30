@@ -12,7 +12,7 @@ import de.greenrobot.dao.AbstractDaoSession;
  * @param <T0,T1>
  * 此类实现了大部分的方法
  */
-public abstract class ADaoService<T0,T1> implements IDaoService<T0, T1>{
+public abstract class ADaoService<T0,T1> implements IDaoService<T1>{
 
 	/**
 	 private static T0_Service daoService;
